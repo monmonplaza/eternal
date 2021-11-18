@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap");
+
+html {
+  font-size: 10px;
+  height: 100%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $dark-color;
+  background-color: $body-color;
+}
+
+.main {
+  &__wrapper {
+    grid-template-columns: 30rem 1fr;
+  }
+}

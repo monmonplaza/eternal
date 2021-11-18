@@ -1,0 +1,31 @@
+.header {
+  padding: 1rem 5rem;
+  background-color: $light-color;
+  &__wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  &__search {
+    align-self: center;
+    .search__block {
+      button {
+        border: none;
+        padding: 1rem 1.6rem;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+
+  &__avatar {
+    justify-self: flex-end;
+    display: flex;
+    align-items: center;
+    img {
+      border-radius: 50%;
+      width: 5rem;
+    }
+
+    .avatar__block {
+      margin-left: 2rem;
+    }
+  }
+}
