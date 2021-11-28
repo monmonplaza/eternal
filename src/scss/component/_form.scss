@@ -8,6 +8,37 @@ input {
 .input {
   &--search {
     background-color: $body-color;
-    width: 50rem;
+    width: 30rem;
+  }
+}
+
+// Modal
+
+.form-group {
+  position: relative;
+  margin-bottom: 2rem;
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  input {
+    width: 100%;
+    &.error-show {
+      background-color: rgba($red-color, 0.4);
+      border-color: $red-color;
+    }
+  }
+
+  .error-msg {
+    position: absolute;
+    color: $red-color;
+    font-size: 1.2rem;
+    font-style: italic;
+    top: 5px;
+    right: 0;
+  }
+
+  input:focus {
+    border-color: $primary-color;
   }
 }

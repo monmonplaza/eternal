@@ -1,0 +1,46 @@
+.table {
+  padding: 3rem 5rem;
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+  }
+
+  &__wrapper {
+    padding: 3rem;
+    background-color: $light-color;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.06);
+
+    table {
+      width: 100%;
+      thead {
+        background-color: $body-color;
+        border-radius: 0.5rem;
+        th {
+          padding: 1.2rem 0.8rem;
+          text-align: left;
+          font-weight: bold;
+        }
+      }
+
+      tbody {
+        td {
+          padding: 1.2rem 0.8rem;
+          border-bottom: 1px solid $light-color-1;
+        }
+      }
+
+      tr {
+        &:hover {
+          background-color: darken($body-color, 10);
+          box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.05);
+        }
+      }
+    }
+  }
+}

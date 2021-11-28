@@ -90,11 +90,8 @@ function getResultData($result) {
             "client_firstname" => $client_firstname,
             "client_lastname" => $client_lastname,
             "client_mobile" => $client_mobile,
-            "client_city" => $client_city,
             "client_address" => $client_address,
-            "client_province" => $client_province,
             "client_email" => $client_email,
-            "client_zipcode" => $client_zipcode,
             "client_active" => $client_active,
             "client_datetime" => $client_datetime
         ];

@@ -1,0 +1,16 @@
+@mixin button($bgc: $primary-color, $color: $light-color) {
+  padding: 1.2rem 1.8rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  border: 1px solid darken($bgc, 5);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-color: $bgc;
+  color: $color;
+  &:hover {
+    background: darken($bgc, 5);
+    color: $color;
+    border-color: darken($bgc, 10);
+  }
+}

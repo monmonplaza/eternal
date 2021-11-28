@@ -4,14 +4,10 @@ class Clients {
     public $client_firstname ;
     public $client_lastname ;
     public $client_mobile ;
-    public $client_city ;
     public $client_address ;
-    public $client_province ;
     public $client_email ;
-    public $client_zipcode ;
     public $client_active ;
     public $client_datetime ;
-
     public $connection ;
     public $tblClients ;
 
@@ -42,12 +38,8 @@ class Clients {
         $sql .= "client_firstname = '{$this->client_firstname}', ";
         $sql .= "client_lastname = '{$this->client_lastname}', ";
         $sql .= "client_mobile = '{$this->client_mobile}', ";
-        $sql .= "client_city = '{$this->client_city}', ";
         $sql .= "client_address = '{$this->client_address}', ";
-        $sql .= "client_province = '{$this->client_province}', ";
-        $sql .= "client_email = '{$this->client_email}', ";
-        $sql .= "client_zipcode = '{$this->client_zipcode}', ";
-        $sql .= "client_province = '{$this->client_province}' ";
+        $sql .= "client_email = '{$this->client_email}' ";
         $sql .= "where client_aid  = '{$this->client_aid }' ";
         
         $result = $this->connection->query($sql);
@@ -66,20 +58,14 @@ class Clients {
         $sql .= "( client_firstname, ";        
         $sql .= "client_lastname, "; 
         $sql .= "client_mobile, "; 
-        $sql .= "client_city, "; 
         $sql .= "client_address, "; 
-        $sql .= "client_province, "; 
         $sql .= "client_email, "; 
-        $sql .= "client_zipcode, "; 
         $sql .= "client_datetime ) values ( ";
         $sql .= "'{$this->client_firstname}', ";
         $sql .= "'{$this->client_lastname}', ";
         $sql .= "'{$this->client_mobile}', ";
-        $sql .= "'{$this->client_city}', ";
         $sql .= "'{$this->client_address}', ";
-        $sql .= "'{$this->client_province}', ";
         $sql .= "'{$this->client_email}', ";
-        $sql .= "'{$this->client_zipcode}', ";
         $sql .= "'{$this->client_datetime}' ) ";
      
         

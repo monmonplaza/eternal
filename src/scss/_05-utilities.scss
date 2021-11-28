@@ -6,3 +6,13 @@
     display: flex;
   }
 }
+
+.bg {
+  &--green {
+    background-color: $green-color !important ;
+  }
+
+  &--red {
+    background-color: $red-color !important ;
+  }
+}

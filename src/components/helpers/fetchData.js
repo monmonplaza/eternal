@@ -29,11 +29,18 @@ export const fetchData = async (
   const data = await fetchApi(devApiUrl + endpoint, fd, dispatch);
   console.log(data);
 
-  // used for result set by read api
-  isLoadMore && setResult !== null && doLoadmore(data, setResult);
-  !isLoadMore && setResult !== null && doList(data, setResult);
+  if (setResult !== null) {
+    if (data.data === null || !data.status) {
+      setResult([]);
+    } else {
+      setResult(data.data);
+      // dispatch(setResultSet(data.data));
+    }
+  }
 
-  // if result data is undefined
+  // isLoadMore && setResult !== null && doLoadmore(data, setResult);
+  // !isLoadMore && setResult !== null && doList(data, setResult);
+
   if (typeof data === "undefined") {
     console.log("undefined");
     dispatch(setError(true));
@@ -42,7 +49,6 @@ export const fetchData = async (
     return;
   }
 
-  // if result data is empty and status is false
   if (!data.status) {
     console.log(data.message);
     setLoading !== null && setLoading(false);
@@ -54,25 +60,20 @@ export const fetchData = async (
     dispatch(setMessage(errorMsg));
   }
 
-  // if result data is not empty and status is true
   if (data.status) {
     console.log("Fetch success");
     setLoading !== null && setLoading(false);
 
-    // add modal will be closed when used
     if (store.isAdd) {
       dispatch(setIsAdd(false));
-      //this will refresh table list
       store.isSave ? dispatch(setSave(false)) : dispatch(setSave(true));
     }
 
-    // delete modal will be closed when used
     if (store.isConfirm) {
       dispatch(setIsConfirm(false));
       store.isSave ? dispatch(setSave(false)) : dispatch(setSave(true));
     }
 
-    // success modal will be closed when used
     if (successModal) {
       dispatch(setSuccess(true));
       dispatch(setMessage(successMsg));

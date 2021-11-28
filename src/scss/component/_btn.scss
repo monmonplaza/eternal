@@ -1,0 +1,27 @@
+.btn {
+  line-height: 1;
+  min-width: 11rem;
+  svg {
+    fill: $light-color;
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+  }
+  &--primary {
+    @include button($primary-color, $light-color);
+  }
+  &--dark {
+    @include button($dark-color, $light-color);
+  }
+
+  &--green {
+    @include button($green-color, $light-color);
+  }
+
+  &--red {
+    @include button($red-color, $light-color);
+  }
+
+  &--gray {
+    @include button($gray-color, $light-color);
+  }
+}

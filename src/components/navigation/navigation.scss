@@ -1,0 +1,42 @@
+.navigation {
+  background-color: $light-color;
+  height: 100vh;
+  padding: 2rem;
+  border-right: 2px solid $body-color;
+  &__grid {
+    display: grid;
+    grid-template-rows: 8rem 1fr;
+  }
+  &__block {
+    display: flex;
+    svg {
+      font-size: 4rem;
+    }
+  }
+
+  nav {
+    ul {
+      li {
+        margin-bottom: 2rem;
+        a {
+          font-size: 1.8rem;
+          display: flex;
+          align-items: center;
+          padding: 1rem;
+          border-radius: 0.5rem;
+          color: $dark-color-1;
+          font-weight: bold;
+          transition: 0.5s ease;
+          svg {
+            margin-right: 1.5rem;
+            font-size: 2rem;
+          }
+          &:hover {
+            background-color: $body-color;
+            color: $dark-color;
+          }
+        }
+      }
+    }
+  }
+}

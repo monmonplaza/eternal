@@ -1,0 +1,132 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($dark-color, 0.9);
+}
+
+.modal {
+  &__main {
+    max-width: 43rem;
+    width: 100%;
+    background-color: $light-color;
+    animation: modalSlideUp 0.3s linear;
+    margin: 0 1rem;
+  }
+
+  &__header {
+    background-color: $light-color-1;
+    color: $dark-color;
+    padding: 1.5rem 1rem;
+    position: relative;
+    color: $light-color;
+    h4 {
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+    }
+
+    svg {
+      margin-right: 0.5rem;
+      font-size: 2rem;
+      path {
+        stroke: $light-color;
+      }
+    }
+
+    button {
+      position: absolute;
+      right: 0.7rem;
+      top: 1rem;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      svg {
+        font-size: 2.5rem;
+        path {
+          stroke: $light-color !important;
+        }
+      }
+    }
+  }
+  &__body {
+    padding: 1rem 2rem;
+    // height: 52vh;
+    max-height: 52vh;
+    overflow-y: scroll;
+  }
+
+  &__body.modal--short {
+    min-height: 12vh;
+    height: 100%;
+  }
+
+  &__body.modal--prompt {
+    text-align: center;
+    min-height: 15vh;
+    height: 100%;
+    display: grid;
+
+    place-items: center;
+    overflow-y: hidden;
+    .prompt__wrapper {
+      p {
+        margin-bottom: 0;
+      }
+      svg {
+        font-size: 4rem;
+        margin-bottom: 0.6rem;
+      }
+    }
+
+    // .prompt__wrapper.error {
+    //   svg {
+    //     fill: $red;
+    //   }
+    // }
+
+    // .prompt__wrapper.success {
+    //   svg {
+    //     fill: $green;
+    //   }
+    // }
+
+    // .prompt__wrapper.warning {
+    //   svg {
+    //     fill: $warning;
+    //   }
+    // }
+  }
+
+  &__footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #ccc;
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      li {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+// Animation
+
+@keyframes modalSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
