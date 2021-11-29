@@ -8,9 +8,9 @@ function App() {
   return (
     <div>
       <StoreProvider>
-        <Router>
+        <Router basename="/dev/eternal">
           <Routes>
-            <Route exact path="/dashboard/clients" element={<Clients />} />
+            <Route exact path="/clients" element={<Clients />} />
           </Routes>
         </Router>
       </StoreProvider>

@@ -19,29 +19,29 @@ const Navigation = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/">
+              <Link to="/clients">
                 <MdOutlineSpaceDashboard /> Dashboard
               </Link>
             </li>
 
             <li>
-              <Link to="/">
+              <Link to="/clients">
                 <RiRoadMapLine /> Lots
               </Link>
             </li>
 
             <li>
-              <Link to="/">
+              <Link to="/clients">
                 <MdOutlineSupervisedUserCircle /> Client
               </Link>
             </li>
             <li>
-              <Link to="/">
+              <Link to="/clients">
                 <RiUserSettingsLine /> Users
               </Link>
             </li>
             <li>
-              <Link to="/">
+              <Link to="/clients">
                 <AiOutlineSetting /> Settings
               </Link>
             </li>
