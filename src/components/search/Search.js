@@ -4,7 +4,7 @@ import { FiSearch } from "react-icons/fi";
 const Search = ({ filter, setFilter }) => {
   return (
     <>
-      <div className="header__search">
+      <div className="table__search">
         <form action="" className="search__block">
           <FiSearch />
           <input

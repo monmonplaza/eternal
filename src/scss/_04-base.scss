@@ -17,3 +17,7 @@ body {
     grid-template-columns: 25rem 1fr;
   }
 }
+
+.blur {
+  filter: blur(5px);
+}

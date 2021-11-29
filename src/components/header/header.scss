@@ -2,54 +2,45 @@
   padding: 1rem 5rem;
   background-color: $light-color;
   &__wrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-  &__search {
-    align-self: center;
-    .search__block {
-      position: relative;
-      svg {
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-        font-size: 2.2rem;
-        opacity: 0.3;
-      }
-      input {
-        border: none;
-        background: $body-color;
-        padding: 1.4rem 1.6rem 1.4rem 5rem;
-        border-radius: 0.5rem;
-        font-size: 1.5rem;
-        &::placeholder {
-          font-weight: bold;
-          opacity: 0.5;
-          font-size: 1.6rem;
-        }
-      }
-      button {
-        border: none;
-        padding: 1.4rem 1.6rem;
-        border-radius: 0.5rem;
-        background-color: $primary-color;
-        color: $light-color;
-        margin-left: 1rem;
-        cursor: pointer;
-      }
-    }
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: flex-end;
   }
 
   &__avatar {
     justify-self: flex-end;
     display: flex;
     align-items: center;
+    border: 1px solid $body-color;
+    padding: 0.5rem 2rem 0.5rem 0;
+    border-radius: 0.5rem;
+    background-color: $light-color;
+    transition: 0.5s ease;
+    &:hover {
+      background-color: $body-color;
+    }
     img {
       border-radius: 50%;
-      width: 5rem;
+      width: 4rem;
     }
 
     .avatar__block {
       margin-left: 2rem;
+    }
+  }
+
+  .avatar__block {
+    margin-right: 1rem;
+
+    h3 {
+      font-weight: bold;
+
+      font-size: 1.4rem;
+    }
+
+    small {
+      text-transform: uppercase;
+      font-size: 1.2rem;
     }
   }
 }

@@ -86,7 +86,7 @@ function getResultData($result) {
     while($row = $result->fetch_assoc()) {
         extract($row);
         $list = [
-            "client_aid " => $client_aid ,
+            "client_aid" => $client_aid ,
             "client_firstname" => $client_firstname,
             "client_lastname" => $client_lastname,
             "client_mobile" => $client_mobile,

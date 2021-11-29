@@ -24,4 +24,42 @@
   &--gray {
     @include button($gray-color, $light-color);
   }
+
+  &--edit {
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    &::after {
+      content: "Edit";
+      position: absolute;
+      top: 2.5rem;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: $light-color;
+      display: none;
+    }
+    &:hover:after {
+      display: block;
+    }
+    svg {
+      transform: translateX(15px);
+      color: $primary-color;
+    }
+  }
+
+  &--add {
+    @include button($primary-color, $light-color);
+    display: flex;
+
+    svg {
+      font-size: 1.6rem;
+      path {
+        stroke: $light-color;
+      }
+    }
+  }
 }

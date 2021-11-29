@@ -1,10 +1,5 @@
 export const COLUMNS = [
   {
-    Header: "ID",
-    accessor: "client_aid",
-  },
-
-  {
     Header: "First Name",
     accessor: "client_firstname",
   },
@@ -22,5 +17,22 @@ export const COLUMNS = [
   {
     Header: "Email",
     accessor: "client_email",
+  },
+
+  {
+    Header: "Action",
+    accessor: "accessor",
+    Cell: ({ row: { original } }) => (
+      <div>
+        <button
+          onClick={() => {
+            dispatch(setIsAdd(true));
+            setRecord(record);
+          }}
+        >
+          Edit
+        </button>
+      </div>
+    ),
   },
 ];

@@ -8,7 +8,7 @@ try{
         $connection = checkConnection();
         checkInputData($data);  
         $clients = new Clients ($connection);
-        $clients->client_aid = filter_var($data["client_aid"], FILTER_SANITIZE_STRING);  
+        $clients->client_aid = filter_var($data["id"], FILTER_SANITIZE_STRING);  
         $result = checkDelete($clients);
         Response::sendResponse(true, "Client successfuly deleted.",[]);      
     } catch (Error $e) {

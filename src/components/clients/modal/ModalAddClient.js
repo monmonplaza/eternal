@@ -2,15 +2,16 @@ import React from "react";
 import { GrFormClose } from "react-icons/gr";
 import { HiOutlineDocumentText } from "react-icons/hi";
 
-import { Formik, Form } from "formik";
+// import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { fetchData } from "../../helpers/fetchData";
-import { InputSelect, InputText } from "../../helpers/FormInputs";
+import { InputText } from "../../helpers/FormInputs";
 import { StoreContext } from "../../../store/StoreContext";
 import SpinnerButton from "../../spinner/SpinnerButton";
 import { setIsAdd } from "../../../store/StoreAction";
+import { Form, Formik } from "formik";
 
-const ModalAddClient = ({ item }) => {
+const ModalAddClient = ({ item, record }) => {
   const { store, dispatch } = React.useContext(StoreContext);
   const [loading, setLoading] = React.useState(false);
   const { itemEdit, setItemEdit } = item;
@@ -21,26 +22,25 @@ const ModalAddClient = ({ item }) => {
   };
 
   const initVal = {
-    client_firstname: itemEdit ? itemEdit.client_firstname : "",
-    client_lastname: itemEdit ? itemEdit.client_lastname : "",
-    client_mobile: itemEdit ? itemEdit.client_mobile : "",
-    client_address: itemEdit ? itemEdit.client_address : "",
-    client_email: itemEdit ? itemEdit.client_email : "",
+    client_firstname: record ? record.client_firstname : "",
+    client_lastname: record ? record.client_lastname : "",
+    client_mobile: record ? record.client_mobile : "",
+    client_address: record ? record.client_address : "",
+    client_email: record ? record.client_email : "",
   };
 
-  //kung require, dapat nasa yupSchema
   const yupSchema = Yup.object({
     // role_name: Yup.string().required("Required"),
   });
 
   return (
     <>
-      <div className="modal modal--form ">
+      <div className="modal  ">
         <div className="modal__main ">
-          <div className="modal__header bg--green">
+          <div className="modal__header bg--primary">
             <h4>
               <HiOutlineDocumentText />
-              <span>{itemEdit ? "Edit Role Level" : "Add Role Level"}</span>
+              <span>{record ? "Edit Role Level" : "Add Role Level"}</span>
             </h4>
             <button onClick={handleClose}>
               <GrFormClose />
@@ -126,11 +126,11 @@ const ModalAddClient = ({ item }) => {
                     <ul>
                       <li>
                         <button
-                          className="btn btn--green"
+                          className="btn btn--primary"
                           type="submit"
                           disabled={loading}
                         >
-                          {itemEdit ? "Update" : "Add"}
+                          {record ? "Update" : "Add"}
                           {loading && <SpinnerButton />}
                         </button>
                       </li>

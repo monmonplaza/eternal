@@ -10,6 +10,31 @@
     }
   }
 
+  &__options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    ul {
+      display: flex;
+      align-self: flex-end;
+      li {
+        margin-right: 1rem;
+        button {
+          cursor: pointer;
+          font-size: 1.4rem;
+          border: none;
+          background-color: $red-color;
+          padding: 1rem 0.5rem;
+          border-radius: 0.5rem;
+          text-transform: capitalize;
+          &:hover {
+            background-color: $body-color;
+          }
+        }
+      }
+    }
+  }
+
   &__wrapper {
     padding: 3rem;
     background-color: $light-color;
@@ -37,9 +62,75 @@
 
       tr {
         &:hover {
-          background-color: darken($body-color, 10);
+          background-color: darken($body-color, 2);
           box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.05);
         }
+        td:first-child {
+          width: 5rem;
+        }
+      }
+    }
+  }
+
+  &__pagination {
+    background-color: $body-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    .page {
+      &__indicator {
+        font-weight: bold;
+      }
+      &__navigation {
+        display: flex;
+        li {
+          margin-left: 1rem;
+          button {
+            padding: 0.5rem;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            svg {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__search {
+    align-self: center;
+    .search__block {
+      position: relative;
+      svg {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        font-size: 2.2rem;
+        opacity: 0.3;
+      }
+      input {
+        border: none;
+        background: $body-color;
+        padding: 1.4rem 1.6rem 1.4rem 5rem;
+        border-radius: 0.5rem;
+        font-size: 1.5rem;
+        border: 1px solid darken($body-color, 10);
+        &::placeholder {
+          opacity: 0.3;
+          font-size: 1.6rem;
+        }
+      }
+      button {
+        border: none;
+        padding: 1.4rem 1.6rem;
+        border-radius: 0.5rem;
+        background-color: $primary-color;
+        color: $light-color;
+        margin-left: 1rem;
+        cursor: pointer;
       }
     }
   }
