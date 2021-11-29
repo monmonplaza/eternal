@@ -11,7 +11,7 @@ class Database {
         $username = "ugxv5milyju80"; 
        // $username = "root"; 
         $password = "Tr2Na,+kI9c$"; 
-        $password = ""; 
+       // $password = ""; 
         $mysqli = new mysqli($host, $username, $password, $databaseName);
         if($mysqli->connect_error) {
             $mysqli = null;
